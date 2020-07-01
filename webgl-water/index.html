@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Water Simulation</title>
+<meta charset="utf8">
+<style>
+@font-face {
+    font-family: 'Cleanvertising';
+    src: local('Cleanvertising-Light'), url('fonts/cleanvertising/cleanvertising-light.woff2') format('woff2'), url('fonts/cleanvertising/cleanvertising-light.woff') format('woff'), url('fonts/cleanvertising/cleanvertising-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cleanvertising';
+    src: local('Cleanvertising-Black'), url('fonts/cleanvertising/cleanvertising-black.woff2') format('woff2'), url('fonts/cleanvertising/cleanvertising-black.woff') format('woff'), url('fonts/cleanvertising/cleanvertising-black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+body {
+    min-width: 900px;
+    display: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #e1e1e1;
+    font-family: Cleanvertising, arial;
+}
+a {
+    cursor: pointer;
+}
+a:hover {
+    color: #fff;
+}
+strong {
+    font-weight: normal;
+    color: #fff;
+    font-size: 15px;
+}
+#lang-switch {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    left: 100px;
+}
+#info {
+    position: relative;
+    float: right;
+    background-color: #1d1d1d;
+}
+.radiotext {
+    float: right;
+    line-height: 19px;
+}
+.info {
+    padding: 5px;
+    padding-bottom: 0;
+    float: left;
+}
+.head {
+    font-size: 30px;
+}
+.extra {
+    position: absolute;
+    padding-right: 0;
+    right: 10px;
+    bottom: 10px;
+}
+.extratext {
+    float: right;
+}
+</style>
+<script src='javascripts/three.min.js'></script>
+<script src='javascripts/detect.js'></script>
+<script src='javascripts/stats/src/Stats.js'></script>
+<script src='javascripts/functions.js'></script>
+<script src='javascripts/ViewControls.js'></script>
+<script src='javascripts/Light.js'></script>
+<script src='javascripts/SkyBox.js'></script>
+<script src='javascripts/WorldObject.js'></script>
+<script src='javascripts/Water.js'></script>
+<script src='javascripts/PoolElement.js'></script>
+<script src='javascripts/Pool.js'></script>
+<script src='javascripts/app.js'></script>
+</head>
+<body>
+    <div id="lang-switch">
+        <a id="ru">ru</a> / <a id="en">en</a>
+    </div>
+    <div id="info">
+        <div class="head info">
+            Симуляция воды
+        </div>
+        <div class="description info">
+            В данной симуляции представлены свойства воды такие как <strong>преломление</strong>, <strong>отражение</strong> и <strong>каустика</strong>
+        </div>
+        <div class="controls info">
+            - Вращайте сцену с помощью мыши, удерживая левую кнопку<br>
+            - Приближайте и удаляйте камеру с помощью колеса мыши<br>
+            - Создавайте волны, перемещая курсор мыши по водной поверхности (onmousemove) или кликая по ней (onclick)
+        </div>
+        <div class="settings info">
+            <div style="float: left;"><input type="radio" class="onmousemove"><div class="radiotext">onmousemove</div></div>
+            <div style="float: left;"><input type="radio" class="onclick"><div class="radiotext">onclick</div></div>
+        </div>
+        <div class="settings info">
+            <div><input type="checkbox" class="staticLight"><div class="radiotext">Вращать источник света со сценой</div></div>
+        </div>
+        <div class="extra info">
+            <div class="extratext">Разработано на Three.js (WebGL)</div><br>
+            <div class="extratext">Беловым Д.</div><br>
+            <div class="extratext">vk.com/dbelov63</div><br>
+            <div class="extratext">dsbelov63@gmail.com</div>
+        </div>
+    </div>
+</body>
+</html>
